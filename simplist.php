@@ -1,5 +1,5 @@
 <?php
-// header('Location: http://www.google.com/');
+header('DELETE : localhost/hello/users/mark.php');
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +10,6 @@
 </head>
 <body>
 
-<h1> bBALLSLS </h1>h1
 </body>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
 </html>
