@@ -3,7 +3,7 @@
 <head>
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
 <script language="JavaScript" type="text/javascript">
-function ajax_post(){
+function addTask(){
     // Create our object
     var hr = new XMLHttpRequest();//hr short for http request
     // Create some variables we need to send to our PHP file
@@ -29,7 +29,7 @@ function ajax_post(){
 <body>
 <h2> To do List </h2>
 Enter your task :<input id ="task" type = "text">
-<input name="myBtn" type="submit" value="Submit Data" onClick="javascript:ajax_post();">
+<input name="myBtn" type="submit" value="Submit Data" onClick="javascript:addTask();">
 <div id = "status"></div>
 </body>
 </html>
