@@ -1,0 +1,17 @@
+{
+    "u1": {
+        "user": "Mark Tamer",
+        "item1": "Do hwk",
+        "item2": "eat food"
+    },
+    "u2": {
+        "user": "Janac",
+        "item1": "Do assignment",
+        "item2": "drink"
+    },
+    "u3": {
+        "user": "Adnan",
+        "item1": "sleep",
+        "item2": "make money"
+    }
+}
