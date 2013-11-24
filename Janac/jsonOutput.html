@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>
+			First Name: <span id="fname"></span><br />
+			Last Name: <span id="lname"></span><br />
+		</p>
+		<script type="text/javascript">
+
+			var txt = '{"employees":[' +
+			'{"firstName":"John","lastName":"Doe" },' +
+			'{"firstName":"Anna","lastName":"Smith" },' +
+			'{"firstName":"Peter","lastName":"Jones" }]}';
+
+			var jsonObj = {
+			    "employees": [
+			        {
+			            "firstname": "janac",
+			            "lastname": "meena"
+			        },
+			        {
+			            "firstname": "mark",
+			            "lastname": "tamer"
+			        }
+			    ]
+			};
+
+			var obj = eval ("(" + txt + ")");
+			document.writeln("you are here");
+			document.getElementById("fname").innerHTML = obj.employees[0].firstName;
+			document.getElementById("lname").innerHTML = obj.employees[1].lastName;
+
+			// document.getElementById("fname").innerHTML = jsonObj.employees[0].firstName;
+			// document.getElementById("lname").innerHTML = jsonObj.employees[1].lastName;
+
+		</script>
+	</body>
+</html>

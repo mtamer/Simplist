@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- <meta http-equiv="refresh" content = "0.5"> -->
+
+    <script type="text/javascript">
+        function ajax_get_json(){
+            var results = document.getElementById("results");
+            var hr = new XMLHttpRequest();
+            var url ="markgivesup.herokuapp.com/todo/api/tasks/1"
+            var url2 ="httpbin.org/get"
+            hr.open("GET", url2, true);
+            hr.setRequestHeader("Content-type", "application/json", true);
+            hr.send(null);            
+
+            // var data = JSON.parse(hr.responseText);
+            document.writeln(hr.responseText);
+            // results.innerHTML = data.user;
+            document.writeln("you are working at this line ");
+            // document.writeln(data);
+            // hr.send(null);
+
+            // for(var obj in data){
+            //    results.innerHTML += "Here are you're daily task for " + data[obj].user+" : "+data[obj].item1+" , "+data[obj].item2+"<hr />";
+            // }
+
+        }
+    </script>
+</head>
+<body>
+    <h1>Test 2 Handling some jsons</h1>
+    <div id = "results"> </div>
+    <div id="janacDiv"></div>
+    <script type="text/javascript">ajax_get_json();</script>
+</body>
+</html>

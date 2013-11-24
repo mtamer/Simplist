@@ -16,6 +16,7 @@ function ajax_get_json(){
             }
         }
     }
+    document.writeln("response text is: ", hr.responseText);
     hr.send(null);
     results.innerHTML = "requesting...";//will put a gif later
 }
