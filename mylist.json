@@ -1,5 +1,5 @@
 {
-    "tasks": [
+    "tasks": [ //an array that holds 3 objects
         {
             "id": 1,
             "title": "SEG",
