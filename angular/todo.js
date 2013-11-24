@@ -1,4 +1,3 @@
-
 // var stringResponse = $http({method: 'GET', url: 'http://httpbin.org/get'});
 // document.writeln(stringResponse.responseText);
 // var string2 = stringResponse.responseText; 
@@ -15,19 +14,19 @@ function httpGet(url){
 var jsonObject = httpGet("http://httpbin.org/get");
 var jsonString = JSON.parse(jsonObject);
 
-var originString = jsonString.origin;
-var hostString = jsonString.headers.Host;
+var jsonTask = httpGet("tasks.json");
+var taskString = JSON.parse(jsonTask);
 
-var taskString ="";
+
+
 
 function TodoCtrl($scope) {//Get request for angular here
 $scope.todos = [
 	{text:'learn angular', done:true},
 	{text:'build an angular app', done:false},
 	{text:'bob the builder', done:false},
-	{text: 'origin: ' + originString, done:false},
-	{text: 'host: ' + hostString, done:false}
-	// {text: httpGet("markgivesup.herokuapp.com/todo/api/tasks/1"), done:false}
+	{text: 'host: ' + jsonString.headers.Host, done:false},
+	{text: 'Task: ' + taskString.tasks[1].title, done:false}
 ];	
  
 $scope.addTodo = function() {
