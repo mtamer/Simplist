@@ -11,8 +11,8 @@ function ajax_get_json(){
         if(hr.readyState == 4 && hr.status == 200) {
             var data = JSON.parse(hr.responseText);
             results.innerHTML = data.user;
-            for(var obj in data){
-            results.innerHTML += "Here are you're daily task for " + data[obj].user+" : "+data[obj].item1+" , "+data[obj].item2+"<hr />";
+            while(var obj in data){
+            results.innerHTML += "Here are you're daily task for " + data[obj].users + "<hr />";
             }
         }
     }
