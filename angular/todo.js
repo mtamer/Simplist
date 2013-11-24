@@ -12,12 +12,22 @@ function httpGet(url){
 	return xmlHttp.responseText;
 }
 
-function TodoCtrl($scope) {
+var jsonObject = httpGet("http://httpbin.org/get");
+var jsonString = JSON.parse(jsonObject);
+
+var originString = jsonString.origin;
+var hostString = jsonString.headers.Host;
+
+var taskString ="";
+
+function TodoCtrl($scope) {//Get request for angular here
 $scope.todos = [
 	{text:'learn angular', done:true},
 	{text:'build an angular app', done:false},
 	{text:'bob the builder', done:false},
-	{text: httpGet("http://httpbin.org/get"), done:false}
+	{text: 'origin: ' + originString, done:false},
+	{text: 'host: ' + hostString, done:false}
+	// {text: httpGet("markgivesup.herokuapp.com/todo/api/tasks/1"), done:false}
 ];	
  
 $scope.addTodo = function() {
