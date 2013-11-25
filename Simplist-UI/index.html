@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <title>Simplist</title>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <!-- <meta http-equiv="refresh" content="1"> -->
+            <!-- <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"> -->
+            <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+                <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+            <script src="http://code.jquery.com/jquery-2.0.3.js"></script>
+            <link href="style.css" rel="stylesheet" type="text/css" media="screen">
+            <link href='http://fonts.googleapis.com/css?family=Gorditas:400,700' rel='stylesheet' type='text/css'>
+            <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
+        </head>
+
+        <body>
+
+
+    <div id="main" class="container">
+                <div class="row">
+            <!-- <div class="col-xs-4 col-xs-offset-8">
+                        <h4>
+                                By: Mark Tamer,
+                                Adnan Khan,
+                            Janac Meena
+                    </h4>
+            </div>        -->
+            <div class="col-xs-4">
+                <h1>
+                        Simplist
+                        <img src="http://www.clker.com/cliparts/0/6/8/6/11971488431079343407barretr_Pencil.svg.med.png">
+                </h1>
+            </div>
+
+        </div>
+        <div class="row">
+                <hr>
+                <h3>
+                        Add Your Tasks Here: <br><br>
+                </h3>
+        </div>
+    </div>
+            <!---
+                the template for the knockout stuff
+            -->
+        <div id="tableDiv" class="container">
+                <div class="row">
+                        <table class="table table-striped">
+                        <tr>
+                                <td style="width: 1px ;"></td>
+                                <td><b>Task</b></td>
+                                <td><b>Options</b></td>
+                        </tr>
+
+                        <!-- ko foreach: Tasks -->
+
+                        <tr>
+                            <td>
+                                <span data-bind="visible: done" class="label label-success">Done</span>
+                                <span data-bind="visible: !done()" class="label label-important">In progress</span>
+                            </td>
+
+                            <td>
+                                <p><b data-bind="text: title"></b></p>
+                                <p data-bind="text: description"></p>
+                            </td>
+
+                            <td>
+                                <button data-bind="click: $parent.beginEdit" class="btn">Edit</button>
+                                <button data-bind="click: $parent.remove" class="btn">Delete</button>
+
+                                <span data-bind="visible: done">
+                                    <button data-bind="click: $parent.markInProgress"
+                                            class="btn">Mark In Progress</button>
+                                </span>
+                                <span data-bind="visible: !done()">
+                                    <button data-bind="click: $parent.markDone" class="btn">
+                                        Mark Done
+                                    </button>
+                                </span>
+                            </td>
+                        </tr>
+
+                                <!-- /ko -->
+                    </table>
+                    <button data-bind="click: beginAdd" class="btn">Add Task</button>
+                </div>
+        </div>
+        <br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+        <div id="footer">
+        <p>SEG 2105A | Adnan Khan | Janac Meenachisundaram 6444706 | Mark Tamer 6411572</p>
+     </div>
+                <!-- knockout js stuff ends here :) -->
+
+
+
+
+        <div id="add" class="modal hide fade" tabindex="=1" role="dialog" aria-labelledby="addDialogLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="addDialogLabel">Add Task</h3>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <div class="control-group">
+                        <label class="control-label" for="inputTask">Task</label>
+                        <div class="controls">
+                            <input data-bind="value: title" type="text" id="inputTask" placeholder="Task title" style="width: 150px;">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputDescription">Description</label>
+                        <div class="controls">
+                            <input data-bind="value: description" type="text" id="inputDescription" placeholder="Description" style="width: 300px;">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button data-bind="click: addTask" class="btn btn-primary">Add Task</button>
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+            </div>
+        </div>
+
+
+
+        <script type="text/javascript" src="todolist-js.js"></script>
+
+
+        </body>
+
+</html>
